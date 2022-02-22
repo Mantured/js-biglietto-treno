@@ -12,6 +12,11 @@
 
 /* chiedo all'utente quanti chilometri vuole fare */
 
+const priceKm = 0.21;
+
+const discountUnderage = (0.80); //che posi scrivere la cifra direttamente dentro l'if o 20/100 è uguale
+
+const discountOverage = (0.60);
 
 const totalKm = parseInt(prompt("quanti chilometri devi percorrere?"));
 console.log(totalKm);
@@ -20,12 +25,15 @@ const age = parseInt(prompt("Quanti anni hai?"));
 console.log(age);
 
 if (age < 18) {
-    ticketPrice = 100 * 0.80; 
+    ticketPrice = ( (priceKm * totalKm) * discountUnderage); 
     console.log(ticketPrice);
 } else if  (age >=65) {
-    ticketPrice = 100 * 0.60;
+    ticketPrice = ( (priceKm * totalKm) * discountOverage);
     console.log(ticketPrice);
 } else {
-    ticketPrice = 100;
+    ticketPrice = ( priceKm * totalKm);
     console.log(ticketPrice);
 };
+
+let outPutPrice = parseFloat(ticketPrice).toFixed(2);
+console.log(outPutPrice)
