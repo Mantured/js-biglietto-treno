@@ -35,5 +35,6 @@ if (age < 18) {
     console.log(ticketPrice);
 };
 
-let outPutPrice = parseFloat(ticketPrice).toFixed(2);
-console.log(outPutPrice)
+let outPutPrice = (ticketPrice).toFixed(2);
+console.log(outPutPrice);
+document.getElementById('i-like-train').innerHTML = outPutPrice;
